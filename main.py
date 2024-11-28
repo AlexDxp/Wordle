@@ -11,7 +11,6 @@ listofwords = fp.read().split()
 randomchoice = random.choice(listofwords)
 guesses = ["_","_","_","_","_"]
 lives = 6
-print(randomchoice)
 while True:
     guess = input(' '.join(guesses))
     word = list(randomchoice)
