@@ -16,32 +16,16 @@ while True:
     word = list(randomchoice)
     g = list(guess)
     wrong = []
+    print(word)
     if guess in listofwords:
-        for j in range(4):
+        for j in range(5):
             for i in range(5):
                 if word[i] == g[i]:
                     guesses[i] = (bold_start + g[i].upper() + bold_end)
-                elif word[i] != g[i]:
-                    if i == 1:
-                        j -= 0
-                        if word[i + j] == g[i]:
-                            guesses[i] = (underline_start + g[i] + underline_end)
-                    elif i == 2:
-                        j -= 1
-                        if word[i + j] == g[i]:
-                            guesses[i] = (underline_start + g[i] + underline_end)
-                    elif i == 3:
-                        j -= 2
-                        if word[i + j] == g[i]:
-                            guesses[i] = (underline_start + g[i] + underline_end)
-                    elif i == 4:
-                        j -= 4
-                        if word[i + j] == g[i]:
-                            guesses[i] = (underline_start + g[i] + underline_end)
-                    elif i == 5:
-                        j -= 5
-                        if word[i + j] == g[i]:
-                            guesses[i] = (underline_start + g[i] + underline_end)
+                elif word[i] != g[i] and word[j] == g[i]:
+                    guesses[i] = (underline_start + g[i].upper() + underline_end)
+                else:
+                    guesses[i] = g[i]
 
     elif guess not in listofwords:
         print("Not in word list, use another word")
